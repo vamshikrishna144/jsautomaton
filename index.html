@@ -1,0 +1,52 @@
+<html>
+<head>
+  <style>
+    .row div {
+      height: 15px;
+      margin: 2px;
+      display: inline-block;
+      width: 15px;
+    }
+
+    .row div.active {
+      background-color: red;
+    }
+
+    .row div.inactive {
+      background-color: blue;
+    }
+
+
+  </style>
+</head>
+  <body>
+    <div class="automaton">
+      <div class="row"></div>
+    </div>
+    <script>
+    function rand() {
+      return Math.random() > .5;
+    }
+    for (let i=0; i<101; i++) {
+      let div = document.createElement('div');
+      div.classList.add(rand() ? "active" : "inactive");
+      document.querySelector('.row').appendChild(div);
+    }
+
+function radomizeRow(rowDiv) {
+    for(i=0; i < rowDiv.childNodes.length; i++) {
+      let div = rowDiv.childNodes[i];
+      div.classList.add(rand() ? 'active' : 'inactive');
+    }
+}
+radomizeRow(document.querySelector('.row'));
+    function duplicateRow() {
+      let firstRow = document.querySelector('.row');
+      let clone = firstRow.cloneNode(true);
+      document.querySelector('.automaton').appendChild(clone);
+    }
+    duplicateRow()
+    </script>
+    <div></div>
+  </body>
+</html>
