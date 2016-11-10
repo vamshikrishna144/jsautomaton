@@ -7,16 +7,12 @@
       display: inline-block;
       width: 15px;
     }
-
     .row div.active {
       background-color: red;
     }
-
     .row div.inactive {
       background-color: blue;
     }
-
-
   </style>
 </head>
   <body>
@@ -32,7 +28,6 @@
       div.classList.add(rand() ? "active" : "inactive");
       document.querySelector('.row').appendChild(div);
     }
-
 function radomizeRow(rowDiv) {
     for(i=0; i < rowDiv.childNodes.length; i++) {
       let div = rowDiv.childNodes[i];
