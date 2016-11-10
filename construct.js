@@ -1,6 +1,6 @@
 'use strict';
 
-const construct = (() => {
+const Automata = (() => {
 
     function genFirstRow(cellsPerRow, rand, color1, color2) {
         const randomSelect = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -58,7 +58,7 @@ const construct = (() => {
         };
     }
 
-    function createPattern(spec) {
+    function createAutomata(spec) {
         const exports = {};
         const ruleBase = [
             [1,1,1],
@@ -89,5 +89,5 @@ const construct = (() => {
         return exports;
     }
 
-    return createPattern;
+    return createAutomata;
 })();
